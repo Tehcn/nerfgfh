@@ -7,27 +7,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 	providedIn: 'root',
 })
 export class TargetsService {
-	targets: Target[] = [
-		{
-			id: 0,
-			name: 'John Doe',
-			price: 0.01,
-			finished: true,
-			image: '../assets/unknown.jpg',
-		},
-		{
-			id: 1,
-			name: 'Unknown',
-			price: 0.02,
-			finished: false,
-			image: '../assets/unknown.jpg',
-		},
-	];
+	targets: Target[] = []
 
 	constructor(private http: HttpClient) {}
 
 	getTargets(): Observable<any> {
-		return this.http.get("http://localhost:3002/targets");
+		return this.http.get("http://nerfgfh-api.herokuapp.com/targets");
 	}
 
 	postTarget(target: Target) {
@@ -37,12 +22,12 @@ export class TargetsService {
 			})
 		};
 		console.log("posting target");
-		return this.http.post("http://localhost:3002/targets/create", target, httpOptions).subscribe(data => {
+		return this.http.post("http://nerfgfh-api.herokuapp.com/targets/create", target, httpOptions).subscribe(data => {
 
 		});
 	}
 
 	deleteTarget(id: number) {
-		return this.http.delete(`http://localhost:3002/targets/${id}/delete`);
+		return this.http.delete(`http://nerfgfh-api.herokuapp.com/targets/${id}/delete`);
 	}
 }
