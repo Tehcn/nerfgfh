@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+$bg: #1e1f22;
+$border: #404349;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+	background-color: #1e1f22;
+	color: white;
+}
+
+img, input {
+	border: 1px solid #404349;
+}
+
+// scrollbar stuff
+* {
+	scrollbar-width: thin;
+	scrollbar-color: lighten($color: #404349, $amount: 5)
+		darken($color: #404349, $amount: 5);
+}
+
+/* Targtes on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: darken($color: #404349, $amount: 5);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: lighten($color: #404349, $amount: 5);
+	border-radius: 20px;
+	border: 3px solid darken($color: #404349, $amount: 5);
+}

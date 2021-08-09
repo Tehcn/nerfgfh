@@ -1,0 +1,50 @@
+.buy-container {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    .buy-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1;
+        grid-column: 2;
+        margin: 1em;
+    }
+
+    .buy-form {
+        display: flex;
+        flex-direction: column;
+        grid-row: 2;
+        grid-column: 2;
+
+        input, select {
+            outline: none;
+            padding: 0.2em;
+        }
+        
+        input:hover, select:hover {
+            background-color: hsl(0, 0%, 10%);
+        }
+        input:focus, input:focus-within, select:focus, select:focus-within {
+            background-color: hsl(0, 0%, 10%);
+        }
+    }
+
+    .buy-details {
+        display: flex;
+        flex-direction: column;
+        grid-row: 3;
+        grid-column: 2;
+
+        button {
+            outline: none;
+            padding: 0.2em;
+            border: 1px solid #404349;
+        }
+
+        button:hover {
+            background-color: hsl(0, 0%, 10%);
+        }
+    }
+}

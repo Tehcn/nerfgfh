@@ -1,0 +1,11 @@
+<div class="target-container">
+    Go to the buy page to request a hit.
+    <div *ngFor="let target of targets; index as i" class="target">
+        <a><img [src]="target.image" alt="target logo" class="target-logo"></a>
+        <h2><span class="id">{{ i }}|</span>&nbsp;<a href="#">{{ target.name }}</a></h2>
+        <blockquote>
+            <p>Price: {{ target.price == 0 ? "" : "$" }}{{ target.price == 0 ? "Free" : target.price }}</p>
+            <p>Status: {{ target.finished ? "Finshed" : "Not Finished" }}</p>
+        </blockquote>
+    </div>
+</div>

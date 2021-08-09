@@ -1,0 +1,19 @@
+<div class="buy-container">
+    <div class="buy-header">
+        <h1>Request Services</h1>
+    </div>
+    <div class="buy-form">
+        <label for="name">Name: </label>
+        <input type="text" [(ngModel)]="name" id="name">
+        <label for="image">Image: </label>
+        <input list="image" [(ngModel)]="image" (change)="onChange($event)">
+        <datalist name="image" id="image">
+            <option value="https://i.imgur.com/2X4p0LP.jpg">Default</option>
+        </datalist>
+    </div>
+
+    <div class="buy-details">
+        <div class="buy-price">Price: $0.00</div>
+        <button (click)="sendTarget(); toHomePage();" type="submit">Order</button>
+    </div>
+</div>
