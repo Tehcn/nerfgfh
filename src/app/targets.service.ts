@@ -12,7 +12,7 @@ export class TargetsService {
 	constructor(private http: HttpClient) {}
 
 	getTargets(): Observable<any> {
-		return this.http.get("http://nerfgfh-api.herokuapp.com/targets");
+		return this.http.get("https://nerfgfh-api.herokuapp.com/targets");
 	}
 
 	postTarget(target: Target) {
@@ -22,12 +22,12 @@ export class TargetsService {
 			})
 		};
 		console.log("posting target");
-		return this.http.post("http://nerfgfh-api.herokuapp.com/targets/create", target, httpOptions).subscribe(data => {
+		return this.http.post("https://nerfgfh-api.herokuapp.com/targets/create", target, httpOptions).subscribe(data => {
 
 		});
 	}
 
 	deleteTarget(id: number) {
-		return this.http.delete(`http://nerfgfh-api.herokuapp.com/targets/${id}/delete`);
+		return this.http.delete(`https://nerfgfh-api.herokuapp.com/targets/${id}/delete`);
 	}
 }
